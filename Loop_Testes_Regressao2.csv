@@ -1,0 +1,338 @@
+index,net_param,ncamadas,n_features,features_col,features_name,random_state,data_train,data_train_resample,test_loss,test_cos_sim,net
+50000,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=24, out_features=5, bias=True)
+    (1): Linear(in_features=5, out_features=1, bias=True)
+    (2): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",3,24,"[  2   4   5  14  16  17  24  29  51  52  57  61  65  66  85  86  92 115
+ 117 137 156 162 166 170]","['Gender', 'Weight', 'BMI', 'Alphablocker', 'AngiotensinIIreceptorantagonist', 'Angiotensinconvertingenzymeinhibitor', 'Antimalarial', 'Benzodiazepine', 'Homeopathic', 'Hypercholesterolemia', 'Longactingbetaagonist', 'Nucleosidereversetranscriptaseinhibitor', 'Phytotherapy', 'Protonpumpinhibitor', 'Dermatitis', 'Epilepsy', 'Glaucoma', 'Spine problem', 'Varicose veins of the legs', 'Heart disease_total', 'Scoliosis_total', 'Boots_total', 'Internal fixation in the thigh', 'By pass']",18,124,275,0.07638761401176453,0.7202047109603882,net_50000
+50001,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=24, out_features=17, bias=True)
+    (1): Linear(in_features=17, out_features=14, bias=True)
+    (2): Linear(in_features=14, out_features=11, bias=True)
+    (3): Linear(in_features=11, out_features=9, bias=True)
+    (4): Linear(in_features=9, out_features=6, bias=True)
+    (5): Linear(in_features=6, out_features=3, bias=True)
+    (6): Linear(in_features=3, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,24,"[  1  22  25  35  43  60  68  69  71  90  95 100 101 110 118 122 124 128
+ 142 149 156 160 167 172]","['AgeGroup', 'Antihistamine', 'Antimuscarinic', 'Calciumchannelblocker', 'Diuretic', 'Nonsteroidalantiinflammatory', 'Salicylate', 'Sedative', 'Selectiveserotoninreuptakeinhibitor', 'Gastritis', 'Hypertriglyceridemia', 'Kidney stones', 'Ligament problems', 'Rheumatism', 'Vascular leakage of the eyes', 'Deep vein thrombosis', 'Endometriosis', 'Intestine disorder', 'Hypercholesterolemia_total', 'Hypertension_total', 'Scoliosis_total', 'Hearing_total', 'Internal fixation in the leg', 'Corrective lens']",36,124,280,0.09079714864492416,0.6836915016174316,net_50001
+50002,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=2, out_features=18, bias=True)
+    (1): Linear(in_features=18, out_features=14, bias=True)
+    (2): Linear(in_features=14, out_features=11, bias=True)
+    (3): Linear(in_features=11, out_features=7, bias=True)
+    (4): Linear(in_features=7, out_features=4, bias=True)
+    (5): Linear(in_features=4, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,2,[ 55 124],"['Kinaseinhibitor', 'Endometriosis']",71,124,268,0.08638126403093338,0.807174563407898,net_50002
+50003,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=20, out_features=15, bias=True)
+    (1): Linear(in_features=15, out_features=13, bias=True)
+    (2): Linear(in_features=13, out_features=11, bias=True)
+    (3): Linear(in_features=11, out_features=9, bias=True)
+    (4): Linear(in_features=9, out_features=7, bias=True)
+    (5): Linear(in_features=7, out_features=5, bias=True)
+    (6): Linear(in_features=5, out_features=3, bias=True)
+    (7): Linear(in_features=3, out_features=1, bias=True)
+    (8): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",9,20,"[  1   4   9  18  37  40  42  50  67  68  78  80  86  89  91 121 142 153
+ 156 173]","['AgeGroup', 'Weight', 'Nmedication', 'Antiarrhythmic', 'Cholinesteraseinhibitor', 'DOPAdecarboxylaseinhibitor', 'Dipeptidylpeptidase4inhibitor', 'Herbalsupplement', 'Retinoid', 'Salicylate', 'Wakefulnesspromotingagent', 'Arthritis', 'Epilepsy', 'Fatty liver', 'Gastroesophageal reflux', 'Ascending colon cancer', 'Hypercholesterolemia_total', 'Labyrinthitis_total', 'Scoliosis_total', 'PaceMaker']",7,124,250,0.11410818994045258,0.5370166301727295,net_50003
+50004,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=4, out_features=3, bias=True)
+    (1): Linear(in_features=3, out_features=2, bias=True)
+    (2): Linear(in_features=2, out_features=2, bias=True)
+    (3): Linear(in_features=2, out_features=2, bias=True)
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): Linear(in_features=1, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+    (8): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",9,4,[ 64 114 124 153],"['Phenothiazine', 'Skin disease', 'Endometriosis', 'Labyrinthitis_total']",96,124,284,0.07832374423742294,0.8135167360305786,net_50004
+50005,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=16, out_features=16, bias=True)
+    (1): Linear(in_features=16, out_features=13, bias=True)
+    (2): Linear(in_features=13, out_features=11, bias=True)
+    (3): Linear(in_features=11, out_features=8, bias=True)
+    (4): Linear(in_features=8, out_features=6, bias=True)
+    (5): Linear(in_features=6, out_features=3, bias=True)
+    (6): Linear(in_features=3, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,16,[  6   8  17  23  41  52  76  87  89  90 102 103 111 121 152 180],"['FootLen', 'Illness', 'Angiotensinconvertingenzymeinhibitor', 'Antiinflammatory', 'Diabetesmellitus', 'Hypercholesterolemia', 'Tumornecrosisfactorinhibitor', 'Esophagitis', 'Fatty liver', 'Gastritis', 'Lumbar tumor', 'Lymphedema of the lower members', 'Sickle cell anemia', 'Ascending colon cancer', 'Hypothyroidism_total', 'Hearing_total']",69,124,264,0.0729987621307373,0.8034235239028931,net_50005
+50006,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=2, out_features=13, bias=True)
+    (1): Linear(in_features=13, out_features=10, bias=True)
+    (2): Linear(in_features=10, out_features=8, bias=True)
+    (3): Linear(in_features=8, out_features=5, bias=True)
+    (4): Linear(in_features=5, out_features=3, bias=True)
+    (5): Linear(in_features=3, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,2,[43 66],"['Diuretic', 'Protonpumpinhibitor']",64,124,284,0.06887133419513702,0.8193187117576599,net_50006
+50007,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=8, out_features=6, bias=True)
+    (1): Linear(in_features=6, out_features=5, bias=True)
+    (2): Linear(in_features=5, out_features=4, bias=True)
+    (3): Linear(in_features=4, out_features=3, bias=True)
+    (4): Linear(in_features=3, out_features=2, bias=True)
+    (5): Linear(in_features=2, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,8,[  2  19  41  48  78 111 134 149],"['Gender', 'Antibiotic', 'Diabetesmellitus', 'HMGCoAreductaseinhibitor', 'Wakefulnesspromotingagent', 'Sickle cell anemia', 'Urinary tract infection', 'Hypertension_total']",7,124,250,0.04671909660100937,0.7888382077217102,net_50007
+50008,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=16, out_features=2, bias=True)
+    (1): Linear(in_features=2, out_features=1, bias=True)
+    (2): Linear(in_features=1, out_features=1, bias=True)
+    (3): Linear(in_features=1, out_features=1, bias=True)
+    (4): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",5,16,[ 30  31  42  53  68  90  94  97  98 103 104 110 117 149 162 180],"['Betablocker', 'Biguanide', 'Dipeptidylpeptidase4inhibitor', 'Hypertension', 'Salicylate', 'Gastritis', 'Hiatus hernia', 'Inflammation of the tibial nerve', 'Keratoconus', 'Lymphedema of the lower members', 'Migraine', 'Rheumatism', 'Varicose veins of the legs', 'Hypertension_total', 'Boots_total', 'Hearing_total']",54,124,296,0.0914226546883583,0.7642226219177246,net_50008
+50009,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=24, out_features=9, bias=True)
+    (1): Linear(in_features=9, out_features=7, bias=True)
+    (2): Linear(in_features=7, out_features=5, bias=True)
+    (3): Linear(in_features=5, out_features=4, bias=True)
+    (4): Linear(in_features=4, out_features=2, bias=True)
+    (5): Linear(in_features=2, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,24,"[  2   5  14  20  32  33  59  61  69  86  92  96 100 107 119 122 136 150
+ 155 158 161 167 177 178]","['Gender', 'BMI', 'Alphablocker', 'Anticholinergic', 'Bisphosphonate', 'Bloodcirculation', 'Musclerelaxant', 'Nucleosidereversetranscriptaseinhibitor', 'Sedative', 'Epilepsy', 'Glaucoma', 'Hyperuricemia', 'Kidney stones', 'Progressive breast cancer', 'Anemia', 'Deep vein thrombosis', 'Vitiligo', 'Hyperthyroidism_total', 'Rhinitis_total', 'Physical_total', 'Orthopedic Shoes', 'Internal fixation in the leg', 'Prosthesis aortic valve', 'Dental_total']",31,124,276,0.07908673584461212,0.754155158996582,net_50009
+50010,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=12, out_features=7, bias=True)
+    (1): Linear(in_features=7, out_features=5, bias=True)
+    (2): Linear(in_features=5, out_features=4, bias=True)
+    (3): Linear(in_features=4, out_features=3, bias=True)
+    (4): Linear(in_features=3, out_features=2, bias=True)
+    (5): Linear(in_features=2, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,12,[ 12  38  40  51  68  69 118 122 128 134 147 182],"['Falls12m', 'Conjugatedestrogen', 'DOPAdecarboxylaseinhibitor', 'Homeopathic', 'Salicylate', 'Sedative', 'Vascular leakage of the eyes', 'Deep vein thrombosis', 'Intestine disorder', 'Urinary tract infection', 'Diabetes mellitus_total', 'Orthosis in the knee_total']",69,124,264,0.07790287584066391,0.7809638977050781,net_50010
+50011,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=11, out_features=13, bias=True)
+    (1): Linear(in_features=13, out_features=7, bias=True)
+    (2): Linear(in_features=7, out_features=1, bias=True)
+    (3): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",4,11,[  5  20  21  22  25  29  76  81 108 139 163],"['BMI', 'Anticholinergic', 'Anticonvulsant', 'Antihistamine', 'Antimuscarinic', 'Benzodiazepine', 'Tumornecrosisfactorinhibitor', 'Breathlessness', 'Prostate disease', 'Tendinitis_total', 'Shoes with silicone insole_total']",34,124,268,0.08200900256633759,0.7877587676048279,net_50011
+50012,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=6, out_features=12, bias=True)
+    (1): Linear(in_features=12, out_features=9, bias=True)
+    (2): Linear(in_features=9, out_features=7, bias=True)
+    (3): Linear(in_features=7, out_features=5, bias=True)
+    (4): Linear(in_features=5, out_features=3, bias=True)
+    (5): Linear(in_features=3, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,6,[ 22  34  42  54  84 176],"['Antihistamine', 'Bronchodilator', 'Dipeptidylpeptidase4inhibitor', 'Insulin', 'Conjunctivitis', 'Corrective lens']",93,124,276,0.07301954925060272,0.8139070272445679,net_50012
+50013,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=16, out_features=11, bias=True)
+    (1): Linear(in_features=11, out_features=9, bias=True)
+    (2): Linear(in_features=9, out_features=7, bias=True)
+    (3): Linear(in_features=7, out_features=6, bias=True)
+    (4): Linear(in_features=6, out_features=4, bias=True)
+    (5): Linear(in_features=4, out_features=2, bias=True)
+    (6): Linear(in_features=2, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,16,[  6  33  51  62  70  75  76  87 103 104 115 123 131 147 170 176],"['FootLen', 'Bloodcirculation', 'Homeopathic', 'Oralcontraceptive', 'Selectivenorepinephrinereuptakeinhibitor', 'Syntheticthyroidhormone', 'Tumornecrosisfactorinhibitor', 'Esophagitis', 'Lymphedema of the lower members', 'Migraine', 'Spine problem', 'Depression', 'Prostatic hyperplasia', 'Diabetes mellitus_total', 'By pass', 'Corrective lens']",68,124,265,0.062205970287323,0.8124082088470459,net_50013
+50014,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=20, out_features=15, bias=True)
+    (1): Linear(in_features=15, out_features=8, bias=True)
+    (2): Linear(in_features=8, out_features=1, bias=True)
+    (3): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",4,20,"[ 13  33  34  35  54  59  60  65  82 100 104 113 125 145 150 156 159 164
+ 175 176]","['5alphareductaseinhibitor', 'Bloodcirculation', 'Bronchodilator', 'Calciumchannelblocker', 'Insulin', 'Musclerelaxant', 'Nonsteroidalantiinflammatory', 'Phytotherapy', 'Bronchitis', 'Kidney stones', 'Migraine', 'Skin cancer', 'Hashimoto disease', 'Asthma_total', 'Hyperthyroidism_total', 'Scoliosis_total', 'Visual_total', 'Normal Shoes_total', 'Internal fixation in the knee', 'Corrective lens']",86,124,246,0.11368944495916367,0.6798990368843079,net_50014
+50015,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=5, out_features=14, bias=True)
+    (1): Linear(in_features=14, out_features=11, bias=True)
+    (2): Linear(in_features=11, out_features=9, bias=True)
+    (3): Linear(in_features=9, out_features=7, bias=True)
+    (4): Linear(in_features=7, out_features=5, bias=True)
+    (5): Linear(in_features=5, out_features=3, bias=True)
+    (6): Linear(in_features=3, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,5,[ 40  66  82 117 160],"['DOPAdecarboxylaseinhibitor', 'Protonpumpinhibitor', 'Bronchitis', 'Varicose veins of the legs', 'Hearing_total']",65,124,256,0.08499344438314438,0.792427122592926,net_50015
+50016,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=12, out_features=3, bias=True)
+    (1): Linear(in_features=3, out_features=2, bias=True)
+    (2): Linear(in_features=2, out_features=2, bias=True)
+    (3): Linear(in_features=2, out_features=2, bias=True)
+    (4): Linear(in_features=2, out_features=1, bias=True)
+    (5): Linear(in_features=1, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+    (8): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",9,12,[ 14  49  63  65  79  86 111 163 166 170 174 178],"['Alphablocker', 'Hblocker', 'Osteoporosis', 'Phytotherapy', 'Xanthineoxidaseinhibitor', 'Epilepsy', 'Sickle cell anemia', 'Shoes with silicone insole_total', 'Internal fixation in the thigh', 'By pass', 'Internal fixation in the medulla', 'Dental_total']",35,124,304,0.06970182806253433,0.8310880064964294,net_50016
+50017,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=17, out_features=4, bias=True)
+    (1): Linear(in_features=4, out_features=3, bias=True)
+    (2): Linear(in_features=3, out_features=3, bias=True)
+    (3): Linear(in_features=3, out_features=2, bias=True)
+    (4): Linear(in_features=2, out_features=2, bias=True)
+    (5): Linear(in_features=2, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,17,[  2   6  10  13  30  44  50  63  68  73  93 114 118 133 142 143 163],"['Gender', 'FootLen', 'Ortho-Prosthesis', '5alphareductaseinhibitor', 'Betablocker', 'Dopamineagonist', 'Herbalsupplement', 'Osteoporosis', 'Salicylate', 'Steroidalprogestin', 'Gout', 'Skin disease', 'Vascular leakage of the eyes', 'Thalassemia minor', 'Hypercholesterolemia_total', 'Allergy_total', 'Shoes with silicone insole_total']",8,124,270,0.07716930657625198,0.8124217391014099,net_50017
+50018,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=17, out_features=15, bias=True)
+    (1): Linear(in_features=15, out_features=11, bias=True)
+    (2): Linear(in_features=11, out_features=8, bias=True)
+    (3): Linear(in_features=8, out_features=4, bias=True)
+    (4): Linear(in_features=4, out_features=1, bias=True)
+    (5): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",6,17,[ 10  16  26  34  44  50  51  65  66  91 103 105 106 122 129 149 157],"['Ortho-Prosthesis', 'AngiotensinIIreceptorantagonist', 'Antipyretic', 'Bronchodilator', 'Dopamineagonist', 'Herbalsupplement', 'Homeopathic', 'Phytotherapy', 'Protonpumpinhibitor', 'Gastroesophageal reflux', 'Lymphedema of the lower members', 'Poliomyelitis', 'Polycystic kidney disease', 'Deep vein thrombosis', 'Melanoma', 'Hypertension_total', 'Intellectual']",82,124,255,0.0690307542681694,0.7641655206680298,net_50018
+50019,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=4, out_features=2, bias=True)
+    (1): Linear(in_features=2, out_features=1, bias=True)
+    (2): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",3,4,[ 14  27 109 136],"['Alphablocker', 'Antithyroid', 'Prostatitis', 'Vitiligo']",64,124,284,0.07716773450374603,0.8209658861160278,net_50019
+50020,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=25, out_features=15, bias=True)
+    (1): Linear(in_features=15, out_features=12, bias=True)
+    (2): Linear(in_features=12, out_features=10, bias=True)
+    (3): Linear(in_features=10, out_features=8, bias=True)
+    (4): Linear(in_features=8, out_features=5, bias=True)
+    (5): Linear(in_features=5, out_features=3, bias=True)
+    (6): Linear(in_features=3, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,25,"[  0  10  12  16  18  19  27  33  51  54  55  61  62  87  89 102 127 136
+ 138 141 146 147 177 178 181]","['Age', 'Ortho-Prosthesis', 'Falls12m', 'AngiotensinIIreceptorantagonist', 'Antiarrhythmic', 'Antibiotic', 'Antithyroid', 'Bloodcirculation', 'Homeopathic', 'Insulin', 'Kinaseinhibitor', 'Nucleosidereversetranscriptaseinhibitor', 'Oralcontraceptive', 'Esophagitis', 'Fatty liver', 'Lumbar tumor', 'Hepatitis B', 'Vitiligo', 'Osteopenia_total', 'Herniated lumbar disc_total', 'Chodromalacia of the knees_total', 'Diabetes mellitus_total', 'Prosthesis aortic valve', 'Dental_total', 'Internal fixation in the toe_foot_total']",27,124,260,0.06279397755861282,0.7928854823112488,net_50020
+50021,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=20, out_features=19, bias=True)
+    (1): Linear(in_features=19, out_features=1, bias=True)
+    (2): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",3,20,"[  8  11  14  20  53  69  78  87  88  94  95  98 101 104 119 122 124 131
+ 161 166]","['Illness', 'Disability', 'Alphablocker', 'Anticholinergic', 'Hypertension', 'Sedative', 'Wakefulnesspromotingagent', 'Esophagitis', 'Essential tremor', 'Hiatus hernia', 'Hypertriglyceridemia', 'Keratoconus', 'Ligament problems', 'Migraine', 'Anemia', 'Deep vein thrombosis', 'Endometriosis', 'Prostatic hyperplasia', 'Orthopedic Shoes', 'Internal fixation in the thigh']",69,124,264,0.06714610010385513,0.8320371508598328,net_50021
+50022,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=15, out_features=9, bias=True)
+    (1): Linear(in_features=9, out_features=7, bias=True)
+    (2): Linear(in_features=7, out_features=5, bias=True)
+    (3): Linear(in_features=5, out_features=4, bias=True)
+    (4): Linear(in_features=4, out_features=2, bias=True)
+    (5): Linear(in_features=2, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,15,[  0  13  22  29  31  39  49  87 103 126 150 155 171 175 178],"['Age', '5alphareductaseinhibitor', 'Antihistamine', 'Benzodiazepine', 'Biguanide', 'Corticosteroid', 'Hblocker', 'Esophagitis', 'Lymphedema of the lower members', 'Heel spurs', 'Hyperthyroidism_total', 'Rhinitis_total', 'Clips in the vesicle', 'Internal fixation in the knee', 'Dental_total']",52,124,244,0.06894008070230484,0.8018538355827332,net_50022
+50023,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=1, out_features=1, bias=True)
+    (1): Linear(in_features=1, out_features=1, bias=True)
+    (2): Linear(in_features=1, out_features=1, bias=True)
+    (3): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",4,1,[25],['Antimuscarinic'],47,124,304,0.06754731386899948,0.8356943130493164,net_50023
+50024,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=19, out_features=11, bias=True)
+    (1): Linear(in_features=11, out_features=9, bias=True)
+    (2): Linear(in_features=9, out_features=7, bias=True)
+    (3): Linear(in_features=7, out_features=5, bias=True)
+    (4): Linear(in_features=5, out_features=3, bias=True)
+    (5): Linear(in_features=3, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,19,"[ 24  29  31  47  52  61  78  80  84 101 111 113 119 133 134 138 141 157
+ 158]","['Antimalarial', 'Benzodiazepine', 'Biguanide', 'Fluoroquinolone', 'Hypercholesterolemia', 'Nucleosidereversetranscriptaseinhibitor', 'Wakefulnesspromotingagent', 'Arthritis', 'Conjunctivitis', 'Ligament problems', 'Sickle cell anemia', 'Skin cancer', 'Anemia', 'Thalassemia minor', 'Urinary tract infection', 'Osteopenia_total', 'Herniated lumbar disc_total', 'Intellectual', 'Physical_total']",96,124,284,0.08052625507116318,0.8137718439102173,net_50024
+50025,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=20, out_features=7, bias=True)
+    (1): Linear(in_features=7, out_features=6, bias=True)
+    (2): Linear(in_features=6, out_features=5, bias=True)
+    (3): Linear(in_features=5, out_features=4, bias=True)
+    (4): Linear(in_features=4, out_features=3, bias=True)
+    (5): Linear(in_features=3, out_features=2, bias=True)
+    (6): Linear(in_features=2, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,20,"[  1   2   9  20  44  54  58  73  75  88  95 101 114 134 135 137 138 160
+ 169 172]","['AgeGroup', 'Gender', 'Nmedication', 'Anticholinergic', 'Dopamineagonist', 'Insulin', 'Meglitinide', 'Steroidalprogestin', 'Syntheticthyroidhormone', 'Essential tremor', 'Hypertriglyceridemia', 'Ligament problems', 'Skin disease', 'Urinary tract infection', 'Vasovagal syncope', 'Heart disease_total', 'Osteopenia_total', 'Hearing_total', 'Breast implant', 'Corrective lens']",37,124,280,0.05521787330508232,0.7751519680023193,net_50025
+50026,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=11, out_features=14, bias=True)
+    (1): Linear(in_features=14, out_features=1, bias=True)
+    (2): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",3,11,[  4  36  38  59  81 108 128 156 159 168 176],"['Weight', 'Centralnervoussystemagent', 'Conjugatedestrogen', 'Musclerelaxant', 'Breathlessness', 'Prostate disease', 'Intestine disorder', 'Scoliosis_total', 'Visual_total', 'Internal fixation in the shoulder', 'Corrective lens']",89,124,300,0.07524480670690536,0.8164419531822205,net_50026
+50027,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=4, out_features=18, bias=True)
+    (1): Linear(in_features=18, out_features=13, bias=True)
+    (2): Linear(in_features=13, out_features=9, bias=True)
+    (3): Linear(in_features=9, out_features=5, bias=True)
+    (4): Linear(in_features=5, out_features=1, bias=True)
+    (5): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",6,4,[ 13  65  84 158],"['5alphareductaseinhibitor', 'Phytotherapy', 'Conjunctivitis', 'Physical_total']",76,124,268,0.07173093408346176,0.8272477984428406,net_50027
+50028,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=25, out_features=18, bias=True)
+    (1): Linear(in_features=18, out_features=15, bias=True)
+    (2): Linear(in_features=15, out_features=12, bias=True)
+    (3): Linear(in_features=12, out_features=9, bias=True)
+    (4): Linear(in_features=9, out_features=6, bias=True)
+    (5): Linear(in_features=6, out_features=3, bias=True)
+    (6): Linear(in_features=3, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,25,"[ 11  13  16  18  23  24  36  45  47  49  53  89  90  92  98 111 114 115
+ 133 135 146 153 157 165 175]","['Disability', '5alphareductaseinhibitor', 'AngiotensinIIreceptorantagonist', 'Antiarrhythmic', 'Antiinflammatory', 'Antimalarial', 'Centralnervoussystemagent', 'Dopamineantagonist', 'Fluoroquinolone', 'Hblocker', 'Hypertension', 'Fatty liver', 'Gastritis', 'Glaucoma', 'Keratoconus', 'Sickle cell anemia', 'Skin disease', 'Spine problem', 'Thalassemia minor', 'Vasovagal syncope', 'Chodromalacia of the knees_total', 'Labyrinthitis_total', 'Intellectual', 'Sandal_FlipFlop_total', 'Internal fixation in the knee']",7,124,250,0.09485526382923126,0.7905089259147644,net_50028
+50029,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=2, out_features=2, bias=True)
+    (1): Linear(in_features=2, out_features=1, bias=True)
+    (2): Linear(in_features=1, out_features=1, bias=True)
+    (3): Linear(in_features=1, out_features=1, bias=True)
+    (4): Linear(in_features=1, out_features=1, bias=True)
+    (5): Linear(in_features=1, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+    (7): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",8,2,[141 160],"['Herniated lumbar disc_total', 'Hearing_total']",98,124,272,0.0953216552734375,0.782240092754364,net_50029
+50030,"<bound method Module.parameters of Net(
+  (linears): ModuleList(
+    (0): Linear(in_features=3, out_features=12, bias=True)
+    (1): Linear(in_features=12, out_features=9, bias=True)
+    (2): Linear(in_features=9, out_features=7, bias=True)
+    (3): Linear(in_features=7, out_features=5, bias=True)
+    (4): Linear(in_features=5, out_features=3, bias=True)
+    (5): Linear(in_features=3, out_features=1, bias=True)
+    (6): Linear(in_features=1, out_features=1, bias=True)
+  )
+)>",7,3,[ 48  97 116],"['HMGCoAreductaseinhibitor', 'Inflammation of the tibial nerve', 'Stroke']",33,124,252,0.06247597187757492,0.8270608186721802,net_50030
