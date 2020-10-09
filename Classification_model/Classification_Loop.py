@@ -134,7 +134,7 @@ def save_checkpoint(state, is_best, filename):
 
 # Loop de redes
 # Load initial xlsx
-df_nets = pd.read_excel('classification_nets_empty.xlsx', index_col=None, header=0)
+df_nets = pd.read_excel('/home/priscila.a/TG-Biomed/Classification_model/classification_nets_empty.xlsx', index_col=None, header=0)
 
 # Load data
 X_train_vali = np.load('X_train_vali.npy')
@@ -317,7 +317,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
     df_nets = df_nets.append(pd.DataFrame(net_info, columns = tags), ignore_index=True)
 
     # Add suffix to identify saved info
-    df_nets.to_excel ('classification_nets_'+sys.argv[3]+'.xlsx', index = False, header=True)
+    df_nets.to_excel ('/home/priscila.a/TG-Biomed/Classification_model/classification_nets_'+sys.argv[3]+'.xlsx', index = False, header=True)
 
 
 
