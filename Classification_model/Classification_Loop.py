@@ -317,7 +317,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
     df_nets = df_nets.append(pd.DataFrame(net_info, columns = tags), ignore_index=True)
 
     # Add suffix to identify saved info
-    df_nets.to_excel ('classification_nets_v2.xlsx', index = False, header=True)
+    df_nets.to_excel ('classification_nets_'+sys.argv[3]+'.xlsx', index = False, header=True)
 
 
 
