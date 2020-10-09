@@ -132,8 +132,7 @@ def save_checkpoint(state, is_best, filename):
 # In[6]:
 
 
-# loop de redes
-Nnets = 5
+# Loop de redes
 # Load initial xlsx
 df_nets = pd.read_excel('classification_nets_empty.xlsx', index_col=None, header=0)
 
@@ -146,13 +145,13 @@ y_test_class = np.load('y_test_class.npy')
 if os.path.exists('Nets') == False: 
     os.makedirs('Nets')
 
-for i in range(Nnets):
+for i in range(int(sys.argv[1]), int(sys.argv[2])):
     number_str = str(i)
-    zero_filled_number = number_str.zfill(5)
+    zero_filled_number = number_str.zfill(6)
     
     # Separando o treino da vali (treino 80%, validação 20%)
     # Deixar o high variável?
-    random_state = np.random.randint(0, Nnets*10, 1)[0]
+    random_state = np.random.randint(0, 10000, 1)[0]
 #     print('Random State: %d' % (random_state))
     X_train, X_vali, y_train_class, y_vali_class = train_test_split(X_train_vali, y_train_vali_class, test_size=0.2, random_state=random_state)
 
