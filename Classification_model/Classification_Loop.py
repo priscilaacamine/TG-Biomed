@@ -238,7 +238,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
                 
                 # Calcula acurácia
                 error_count_sur = y_vali_class.size - np.count_nonzero((targets_vali_sur.squeeze() == predicted_sur) .numpy())
-                acc_vali_sur = 100 * torch.sum(targets_vali_sur.squeeze() == predicted_sur) / y_vali_class.size
+                acc_vali_sur = 100 * torch.sum(targets_vali_sur.squeeze() == predicted_sur) // y_vali_class.size
 
                 r_vali_sur = np.corrcoef(predicted_sur.detach().numpy().squeeze(), targets_vali_sur.detach().numpy().squeeze())[0,1]
                 
