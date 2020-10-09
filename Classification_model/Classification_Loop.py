@@ -137,13 +137,13 @@ def save_checkpoint(state, is_best, filename):
 df_nets = pd.read_excel('/home/priscila.a/TG-Biomed/Classification_model/classification_nets_empty.xlsx', index_col=None, header=0)
 
 # Load data
-X_train_vali = np.load('X_train_vali.npy')
-y_train_vali_class = np.load('y_train_vali_class.npy')
-X_test = np.load('X_test.npy')
-y_test_class = np.load('y_test_class.npy')
+X_train_vali = np.load('/home/priscila.a/TG-Biomed/Classification_model/X_train_vali.npy')
+y_train_vali_class = np.load('/home/priscila.a/TG-Biomed/Classification_model/y_train_vali_class.npy')
+X_test = np.load('/home/priscila.a/TG-Biomed/Classification_model/X_test.npy')
+y_test_class = np.load('/home/priscila.a/TG-Biomed/Classification_model/y_test_class.npy')
 
-if os.path.exists('Nets') == False: 
-    os.makedirs('Nets')
+if os.path.exists('/home/priscila.a/TG-Biomed/Classification_model/Nets') == False: 
+    os.makedirs('/home/priscila.a/TG-Biomed/Classification_model/Nets')
 
 for i in range(int(sys.argv[1]), int(sys.argv[2])):
     number_str = str(i)
@@ -161,7 +161,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
     X_vali_scaled = scaler_x.transform(X_vali)
     X_test_scaled = scaler_x.transform(X_test)
     # save the scaler
-    dump(scaler_x, open('./Nets/'+zero_filled_number+'_scaler_x.pkl', 'wb'))
+    dump(scaler_x, open('/home/priscila.a/TG-Biomed/Classification_model/Nets/'+zero_filled_number+'_scaler_x.pkl', 'wb'))
     
     # Create Surrogate ## Para validação ou para teste?
     X_vali_scaled_sur = createSurrogate(X_vali_scaled)
@@ -227,7 +227,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
                             'loss': loss_v.item(),
                             'R-corrcoef': r_vali,
                             'optimizer' : optimizer.state_dict(),
-                            }, is_best, './Nets/'+zero_filled_number+'_model_best.pth.tar')
+                            }, is_best, '/home/priscila.a/TG-Biomed/Classification_model/Nets/'+zero_filled_number+'_model_best.pth.tar')
 
             if is_best:                
                 inputs_vali_sur = torch.autograd.Variable(torch.Tensor(X_vali_scaled_sur.astype(np.float32)).float())
@@ -252,7 +252,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
 #             print('   R-corrcoef: %s' % (str(r_vali)))
 
     # Load best model
-    checkpoint = torch.load('./Nets/'+zero_filled_number+'_model_best.pth.tar')
+    checkpoint = torch.load('/home/priscila.a/TG-Biomed/Classification_model/Nets/'+zero_filled_number+'_model_best.pth.tar')
     net.load_state_dict(checkpoint['state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer'])
     
