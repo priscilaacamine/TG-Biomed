@@ -213,7 +213,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
 
             # Calcula acurácia
             error_count = y_vali_class.size - np.count_nonzero((targets_vali.squeeze() == predicted) .numpy())
-            acc_vali[epoch] = 100 * torch.sum(targets_vali.squeeze() == predicted) / y_vali_class.size
+            acc_vali[epoch] = 100 * torch.sum(targets_vali.squeeze() == predicted) // y_vali_class.size
             
             r_vali = np.corrcoef(predicted.detach().numpy().squeeze(), targets_vali.detach().numpy().squeeze())[0,1]
             
@@ -270,7 +270,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
     _, predicted = torch.max(out.data, 1)       
 
     error_count = y_test_class.size - np.count_nonzero((targets.squeeze() == predicted) .numpy())
-    acc = 100 * torch.sum(targets.squeeze() == predicted) /  y_test_class.size
+    acc = 100 * torch.sum(targets.squeeze() == predicted) //  y_test_class.size
     r = np.corrcoef(predicted.detach().numpy().squeeze(), targets.detach().numpy().squeeze())[0,1]
 
 #     print('Errors: %d; Accuracy: %d%%' % (error_count, acc))
