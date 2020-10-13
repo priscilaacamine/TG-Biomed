@@ -142,8 +142,8 @@ y_train_vali_class = np.load('/home/priscila.a/TG-Biomed/Classification_model/y_
 X_test = np.load('/home/priscila.a/TG-Biomed/Classification_model/X_test.npy')
 y_test_class = np.load('/home/priscila.a/TG-Biomed/Classification_model/y_test_class.npy')
 
-if os.path.exists('/home/priscila.a/TG-Biomed/Classification_model/Nets') == False: 
-    os.makedirs('/home/priscila.a/TG-Biomed/Classification_model/Nets')
+if os.path.exists('/home/priscila.a/TG-Biomed/Classification_model/Nets_hpc') == False: 
+    os.makedirs('/home/priscila.a/TG-Biomed/Classification_model/Nets_hpc')
 
 for i in range(int(sys.argv[1]), int(sys.argv[2])):
     number_str = str(i)
@@ -161,7 +161,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
     X_vali_scaled = scaler_x.transform(X_vali)
     X_test_scaled = scaler_x.transform(X_test)
     # save the scaler
-    dump(scaler_x, open('/home/priscila.a/TG-Biomed/Classification_model/Nets/'+zero_filled_number+'_scaler_x.pkl', 'wb'))
+    dump(scaler_x, open('/home/priscila.a/TG-Biomed/Classification_model/Nets_hpc/'+zero_filled_number+'_scaler_x.pkl', 'wb'))
     
     # Create Surrogate ## Para validação ou para teste?
     X_vali_scaled_sur = createSurrogate(X_vali_scaled)
@@ -227,7 +227,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
                             'loss': loss_v.item(),
                             'R-corrcoef': r_vali,
                             'optimizer' : optimizer.state_dict(),
-                            }, is_best, '/home/priscila.a/TG-Biomed/Classification_model/Nets/'+zero_filled_number+'_model_best.pth.tar')
+                            }, is_best, '/home/priscila.a/TG-Biomed/Classification_model/Nets_hpc/'+zero_filled_number+'_model_best.pth.tar')
 
             if is_best:                
                 inputs_vali_sur = torch.autograd.Variable(torch.Tensor(X_vali_scaled_sur.astype(np.float32)).float())
@@ -252,7 +252,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
 #             print('   R-corrcoef: %s' % (str(r_vali)))
 
     # Load best model
-    checkpoint = torch.load('/home/priscila.a/TG-Biomed/Classification_model/Nets/'+zero_filled_number+'_model_best.pth.tar')
+    checkpoint = torch.load('/home/priscila.a/TG-Biomed/Classification_model/Nets_hpc/'+zero_filled_number+'_model_best.pth.tar')
     net.load_state_dict(checkpoint['state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer'])
     
