@@ -134,16 +134,16 @@ def save_checkpoint(state, is_best, filename):
 
 # Loop de redes
 # Load initial xlsx
-df_nets = pd.read_excel('/home/renato.watanabe/TG-Biomed/Classification_model/classification_nets_empty.xlsx', index_col=None, header=0)
+df_nets = pd.read_excel('/home/renato.watanabe/TG-Biomed/Classification_model/regression_nets_empty.xlsx', index_col=None, header=0)
 
 # Load data
-X_train_vali = np.load('/home/renato.watanabe/TG-Biomed/Classification_model/X_train_vali.npy')
-y_train_vali_class = np.load('/home/renato.watanabe/TG-Biomed/Classification_model/y_train_vali_class.npy')
-X_test = np.load('/home/renato.watanabe/TG-Biomed/Classification_model/X_test.npy')
-y_test_class = np.load('/home/renato.watanabe/TG-Biomed/Classification_model/y_test_class.npy')
+X_train_vali = np.load('/home/renato.watanabe/TG-Biomed/Classification_model/X_train_valiBDS.npy')
+y_train_vali = np.load('/home/renato.watanabe/TG-Biomed/Classification_model/y_train_valiBDS.npy')
+X_test = np.load('/home/priscila.a/TG-Biomed/Classification_model/X_testBDS.npy')
+y_test = np.load('/home/priscila.a/TG-Biomed/Classification_model/y_testBDS.npy')
 
-if os.path.exists('/home/renato.watanabe/TG-Biomed/Classification_model/Nets_hpc') == False: 
-    os.makedirs('/home/renato.watanabe/TG-Biomed/Classification_model/Nets_hpc')
+if os.path.exists('/home/renato.watanabe/TG-Biomed/Classification_model/Nets_hpc_reg') == False: 
+    os.makedirs('/home/renato.watanabe/TG-Biomed/Classification_model/Nets_hpc_reg')
 
 for i in range(int(sys.argv[1]), int(sys.argv[2])):
     number_str = str(i)
@@ -153,35 +153,39 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
     # Deixar o high variável?
     random_state = np.random.randint(0, 10000, 1)[0]
 #     print('Random State: %d' % (random_state))
-    X_train, X_vali, y_train_class, y_vali_class = train_test_split(X_train_vali, y_train_vali_class, test_size=0.2, random_state=random_state)
+    X_train, X_vali, y_train, y_vali = train_test_split(X_train_vali, y_train_vali, test_size=0.2, random_state=random_state)
 
     # Escalamento e Transformação dos dados
     scaler_x = RobustScaler(with_centering=True)
+    scaler_y = RobustScaler(with_centering=True)
     X_train_scaled = scaler_x.fit_transform(X_train)
     X_vali_scaled = scaler_x.transform(X_vali)
     X_test_scaled = scaler_x.transform(X_test)
     X_train_scaled[:,-1] = 1
     X_vali_scaled[:,-1] = 1
     X_test_scaled[:,-1] = 1
+    y_train_scaled = scaler_y.fit_transform(y_train)
+    y_vali_scaled = scaler_y.transform(y_vali)
+    y_test_scaled = scaler_y.transform(y_test)
     # save the scaler
-    dump(scaler_x, open('/home/renato.watanabe/TG-Biomed/Classification_model/Nets_hpc/'+zero_filled_number+'_scaler_x.pkl', 'wb'))
+    dump(scaler_x, open('/home/priscila.a/TG-Biomed/Classification_model/Nets_hpc/'+zero_filled_number+'_scaler_x.pkl', 'wb'))
     
     # Create Surrogate ## Para validação ou para teste?
     X_vali_scaled_sur = createSurrogate(X_vali_scaled)
     
     # Parâmetros da rede
     torch.manual_seed(1234)
-    num_layers = 4
+    num_layers = 3
 #     print('Number of layers: %d' % (num_layers))
     layer_init_size = np.random.randint(low=1, high=24)
 #     print('Inicial size layer: %d' % (layer_init_size))
-    layer_2_size = np.random.randint(low=1, high=24)
-    layers_size = [layer_init_size, layer_2_size, 4]
+    
+    layers_size = [layer_init_size, 1]
 #     print('Layers sizes:', list(layers_size))
-    net = Net(input_size=X_train.shape[1], num_layers=num_layers, layers_size=layers_size , output_size=4)
+    net = Net(input_size=X_train.shape[1], num_layers=num_layers, layers_size=layers_size , output_size=1)
     
     # Choose optmizer and loss function
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.MSELoss()
     learning_rate = np.random.randint(low=1, high=100)/1000
     optimizer = torch.optim.Adam(net.parameters(), lr = learning_rate)
     
@@ -195,7 +199,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
     for epoch in range(epochs):
 
         inputs = torch.autograd.Variable(torch.Tensor(X_train_scaled.astype(np.float32)).float())
-        targets = torch.autograd.Variable(torch.Tensor(y_train_class).long())
+        targets = torch.autograd.Variable(torch.Tensor(y_train_scaled).float())
 
         optimizer.zero_grad()
         out = net(inputs)
@@ -208,7 +212,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
         # Validação
         if epoch == 0 or (epoch + 1) % 100 == 0:
             inputs_vali = torch.autograd.Variable(torch.Tensor(X_vali_scaled.astype(np.float32)).float())
-            targets_vali = torch.autograd.Variable(torch.Tensor(y_vali_class).long())
+            targets_vali = torch.autograd.Variable(torch.Tensor(y_vali_scaled).float())
             out_vali = net(inputs_vali)
             loss_v = criterion(out_vali, targets_vali.squeeze())
             loss_vali[epoch] = loss_v.item()
@@ -230,7 +234,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
                             'loss': loss_v.item(),
                             'R-corrcoef': r_vali,
                             'optimizer' : optimizer.state_dict(),
-                            }, is_best, '/home/renato.watanabe/TG-Biomed/Classification_model/Nets_hpc/'+zero_filled_number+'_model_best.pth.tar')
+                            }, is_best, '/home/priscila.a/TG-Biomed/Classification_model/Nets_hpc/'+zero_filled_number+'_model_best.pth.tar')
 
             if is_best:                
                 inputs_vali_sur = torch.autograd.Variable(torch.Tensor(X_vali_scaled_sur.astype(np.float32)).float())
@@ -255,7 +259,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
 #             print('   R-corrcoef: %s' % (str(r_vali)))
 
     # Load best model
-    checkpoint = torch.load('/home/renato.watanabe/TG-Biomed/Classification_model/Nets_hpc/'+zero_filled_number+'_model_best.pth.tar')
+    checkpoint = torch.load('/home/renato.watanabe/TG-Biomed/Classification_model/Nets_hpc_reg/'+zero_filled_number+'_model_best.pth.tar')
     net.load_state_dict(checkpoint['state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer'])
     
@@ -320,7 +324,7 @@ for i in range(int(sys.argv[1]), int(sys.argv[2])):
     df_nets = df_nets.append(pd.DataFrame(net_info, columns = tags), ignore_index=True)
 
     # Add suffix to identify saved info
-    df_nets.to_excel ('/home/renato.watanabe/TG-Biomed/Classification_model/classification_nets_hpc_'+sys.argv[3]+'.xlsx', index = False, header=True)
+    df_nets.to_excel ('/home/renato.watanabe/TG-Biomed/Classification_model/classification_nets_hpc_reg'+sys.argv[3]+'.xlsx', index = False, header=True)
 
 
 
